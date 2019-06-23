@@ -1,11 +1,11 @@
 CC=gcc
-CFLAGS= -Wall -Wextra -pedantic -std=c99
+CFLAGS= -Wall -Wextra -pedantic
 
 src = $(wildcard src/*.c)
 obj = $(src:.c=.o)
 
 hash_table: $(obj)
-	$(CC) -o $@ $^ $(CFLAGS)
+	$(CC) -o build/$@ $^ $(CFLAGS)
 
 .PHONY: clean
 clean:
